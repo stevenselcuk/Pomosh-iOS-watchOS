@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A157C6D2494F17500903915 /* Pomosh Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0AB664182487DA1200548CC8 /* Pomosh Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		0A157C6E2494F57900903915 /* Pomosh Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 0AB6640C2487DA0E00548CC8 /* Pomosh Watch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0A4D95252486BD1B001C4293 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4D95242486BD1B001C4293 /* AppDelegate.swift */; };
 		0A4D95272486BD1B001C4293 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4D95262486BD1B001C4293 /* SceneDelegate.swift */; };
 		0A4D952A2486BD1B001C4293 /* Pomosh.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A4D95282486BD1B001C4293 /* Pomosh.xcdatamodeld */; };
@@ -14,7 +16,101 @@
 		0A4D952E2486BD1F001C4293 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A4D952D2486BD1F001C4293 /* Assets.xcassets */; };
 		0A4D95312486BD1F001C4293 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A4D95302486BD1F001C4293 /* Preview Assets.xcassets */; };
 		0A4D95342486BD1F001C4293 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A4D95322486BD1F001C4293 /* LaunchScreen.storyboard */; };
+		0A4D953C2486BE6D001C4293 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4D953B2486BE6D001C4293 /* Timer.swift */; };
+		0A4D953E2486BE8A001C4293 /* TimerRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4D953D2486BE8A001C4293 /* TimerRing.swift */; };
+		0A4D95402486BEAE001C4293 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4D953F2486BEAE001C4293 /* Utils.swift */; };
+		0A4D95422486C0B8001C4293 /* PagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4D95412486C0B8001C4293 /* PagerView.swift */; };
+		0A4D95442486C2E2001C4293 /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4D95432486C2E2001C4293 /* Button.swift */; };
+		0A4D95472486C6D3001C4293 /* SpaceMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0A4D95462486C6D3001C4293 /* SpaceMono-Regular.ttf */; };
+		0A4D95492486C73D001C4293 /* SpaceMono-Regular.ttf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0A4D95462486C6D3001C4293 /* SpaceMono-Regular.ttf */; };
+		0A4D954B2486CA2B001C4293 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4D954A2486CA2B001C4293 /* SettingsView.swift */; };
+		0AB664102487DA0E00548CC8 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AB6640E2487DA0E00548CC8 /* Interface.storyboard */; };
+		0AB664122487DA1200548CC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AB664112487DA1200548CC8 /* Assets.xcassets */; };
+		0AB6641E2487DA1200548CC8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB6641D2487DA1200548CC8 /* ContentView.swift */; };
+		0AB664202487DA1200548CC8 /* HostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB6641F2487DA1200548CC8 /* HostingController.swift */; };
+		0AB664222487DA1200548CC8 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB664212487DA1200548CC8 /* ExtensionDelegate.swift */; };
+		0AB664242487DA1200548CC8 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB664232487DA1200548CC8 /* NotificationController.swift */; };
+		0AB664262487DA1200548CC8 /* NotificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB664252487DA1200548CC8 /* NotificationView.swift */; };
+		0AB664282487DA1200548CC8 /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB664272487DA1200548CC8 /* ComplicationController.swift */; };
+		0AB6642A2487DA1300548CC8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AB664292487DA1300548CC8 /* Assets.xcassets */; };
+		0AB6642D2487DA1300548CC8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0AB6642C2487DA1300548CC8 /* Preview Assets.xcassets */; };
+		0AB6643E24881AF300548CC8 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB6643D24881AF300548CC8 /* Timer.swift */; };
+		0AB6644024881B0F00548CC8 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB6643F24881B0F00548CC8 /* Utils.swift */; };
+		0AB664482489167B00548CC8 /* PagerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AB664472489167B00548CC8 /* PagerView.swift */; };
+		0AB6644A2489479B00548CC8 /* session.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AB664492489479B00548CC8 /* session.wav */; };
+		0AB6644F248950E100548CC8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AB6644E248950E100548CC8 /* AVFoundation.framework */; };
+		0AB664512489524800548CC8 /* toggle.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AB664502489524800548CC8 /* toggle.wav */; };
+		0AB66453248953A000548CC8 /* end.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AB66452248953A000548CC8 /* end.wav */; };
+		0AB664552489548A00548CC8 /* hit.wav in Resources */ = {isa = PBXBuildFile; fileRef = 0AB664542489548A00548CC8 /* hit.wav */; };
+		0AB6645A248969D300548CC8 /* Silka Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0AB66459248969D300548CC8 /* Silka Bold.otf */; };
+		0AB6645C248969DD00548CC8 /* Silka Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0AB6645B248969DD00548CC8 /* Silka Regular.otf */; };
+		0AB6645D24896A1600548CC8 /* Silka Bold.otf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0AB66459248969D300548CC8 /* Silka Bold.otf */; };
+		0AB6645E24896A1600548CC8 /* Silka Regular.otf in CopyFiles */ = {isa = PBXBuildFile; fileRef = 0AB6645B248969DD00548CC8 /* Silka Regular.otf */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0A157C6A2494F14900903915 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A4D95192486BD1B001C4293 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0AB664172487DA1200548CC8;
+			remoteInfo = "Pomosh Watch Extension";
+		};
+		0A157C6F2494F57900903915 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A4D95192486BD1B001C4293 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0AB6640B2487DA0E00548CC8;
+			remoteInfo = "Pomosh Watch";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0A157C682494F0A900903915 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A157C6C2494F14900903915 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0A157C6D2494F17500903915 /* Pomosh Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A4D95482486C733001C4293 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = Fonts;
+			dstSubfolderSpec = 7;
+			files = (
+				0AB6645D24896A1600548CC8 /* Silka Bold.otf in CopyFiles */,
+				0AB6645E24896A1600548CC8 /* Silka Regular.otf in CopyFiles */,
+				0A4D95492486C73D001C4293 /* SpaceMono-Regular.ttf in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AB664332487DA1300548CC8 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				0A157C6E2494F57900903915 /* Pomosh Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0A4D95212486BD1B001C4293 /* Pomosh.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomosh.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,10 +122,56 @@
 		0A4D95302486BD1F001C4293 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0A4D95332486BD1F001C4293 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0A4D95352486BD1F001C4293 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A4D953B2486BE6D001C4293 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		0A4D953D2486BE8A001C4293 /* TimerRing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerRing.swift; sourceTree = "<group>"; };
+		0A4D953F2486BEAE001C4293 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		0A4D95412486C0B8001C4293 /* PagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerView.swift; sourceTree = "<group>"; };
+		0A4D95432486C2E2001C4293 /* Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		0A4D95462486C6D3001C4293 /* SpaceMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SpaceMono-Regular.ttf"; sourceTree = "<group>"; };
+		0A4D954A2486CA2B001C4293 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0AB6640C2487DA0E00548CC8 /* Pomosh Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pomosh Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AB6640F2487DA0E00548CC8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		0AB664112487DA1200548CC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0AB664132487DA1200548CC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AB664182487DA1200548CC8 /* Pomosh Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Pomosh Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0AB6641D2487DA1200548CC8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0AB6641F2487DA1200548CC8 /* HostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostingController.swift; sourceTree = "<group>"; };
+		0AB664212487DA1200548CC8 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		0AB664232487DA1200548CC8 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		0AB664252487DA1200548CC8 /* NotificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationView.swift; sourceTree = "<group>"; };
+		0AB664272487DA1200548CC8 /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		0AB664292487DA1300548CC8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0AB6642C2487DA1300548CC8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0AB6642E2487DA1300548CC8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0AB6642F2487DA1300548CC8 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		0AB6643D24881AF300548CC8 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		0AB6643F24881B0F00548CC8 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		0AB664412488376400548CC8 /* Pomosh Watch ExtensionRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Pomosh Watch ExtensionRelease.entitlements"; sourceTree = "<group>"; };
+		0AB66442248837CD00548CC8 /* Pomosh WatchRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Pomosh WatchRelease.entitlements"; sourceTree = "<group>"; };
+		0AB66443248837D900548CC8 /* PomoshRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PomoshRelease.entitlements; sourceTree = "<group>"; };
+		0AB6644424883C5F00548CC8 /* Pomosh Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Pomosh Watch Extension.entitlements"; sourceTree = "<group>"; };
+		0AB6644524883C7E00548CC8 /* Pomosh Watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Pomosh Watch.entitlements"; sourceTree = "<group>"; };
+		0AB6644624883C8600548CC8 /* PomoshDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PomoshDebug.entitlements; sourceTree = "<group>"; };
+		0AB664472489167B00548CC8 /* PagerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagerView.swift; sourceTree = "<group>"; };
+		0AB664492489479B00548CC8 /* session.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = session.wav; sourceTree = "<group>"; };
+		0AB6644E248950E100548CC8 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		0AB664502489524800548CC8 /* toggle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = toggle.wav; sourceTree = "<group>"; };
+		0AB66452248953A000548CC8 /* end.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = end.wav; sourceTree = "<group>"; };
+		0AB664542489548A00548CC8 /* hit.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hit.wav; sourceTree = "<group>"; };
+		0AB66459248969D300548CC8 /* Silka Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Silka Bold.otf"; sourceTree = "<group>"; };
+		0AB6645B248969DD00548CC8 /* Silka Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Silka Regular.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		0A4D951E2486BD1B001C4293 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AB6644F248950E100548CC8 /* AVFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AB664152487DA1200548CC8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,7 +185,10 @@
 			isa = PBXGroup;
 			children = (
 				0A4D95232486BD1B001C4293 /* Pomosh */,
+				0AB6640D2487DA0E00548CC8 /* Pomosh Watch */,
+				0AB6641C2487DA1200548CC8 /* Pomosh Watch Extension */,
 				0A4D95222486BD1B001C4293 /* Products */,
+				0AB6644D248950E000548CC8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -51,6 +196,8 @@
 			isa = PBXGroup;
 			children = (
 				0A4D95212486BD1B001C4293 /* Pomosh.app */,
+				0AB6640C2487DA0E00548CC8 /* Pomosh Watch.app */,
+				0AB664182487DA1200548CC8 /* Pomosh Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,14 +205,27 @@
 		0A4D95232486BD1B001C4293 /* Pomosh */ = {
 			isa = PBXGroup;
 			children = (
+				0AB6644624883C8600548CC8 /* PomoshDebug.entitlements */,
+				0AB66443248837D900548CC8 /* PomoshRelease.entitlements */,
+				0A4D95452486C6C5001C4293 /* Fonts */,
 				0A4D95242486BD1B001C4293 /* AppDelegate.swift */,
 				0A4D95262486BD1B001C4293 /* SceneDelegate.swift */,
+				0AB664492489479B00548CC8 /* session.wav */,
 				0A4D952B2486BD1B001C4293 /* ContentView.swift */,
 				0A4D952D2486BD1F001C4293 /* Assets.xcassets */,
 				0A4D95322486BD1F001C4293 /* LaunchScreen.storyboard */,
 				0A4D95352486BD1F001C4293 /* Info.plist */,
 				0A4D95282486BD1B001C4293 /* Pomosh.xcdatamodeld */,
 				0A4D952F2486BD1F001C4293 /* Preview Content */,
+				0A4D953B2486BE6D001C4293 /* Timer.swift */,
+				0A4D953D2486BE8A001C4293 /* TimerRing.swift */,
+				0A4D953F2486BEAE001C4293 /* Utils.swift */,
+				0AB664542489548A00548CC8 /* hit.wav */,
+				0AB664502489524800548CC8 /* toggle.wav */,
+				0AB66452248953A000548CC8 /* end.wav */,
+				0A4D95412486C0B8001C4293 /* PagerView.swift */,
+				0A4D95432486C2E2001C4293 /* Button.swift */,
+				0A4D954A2486CA2B001C4293 /* SettingsView.swift */,
 			);
 			path = Pomosh;
 			sourceTree = "<group>";
@@ -78,6 +238,66 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		0A4D95452486C6C5001C4293 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0AB66459248969D300548CC8 /* Silka Bold.otf */,
+				0AB6645B248969DD00548CC8 /* Silka Regular.otf */,
+				0A4D95462486C6D3001C4293 /* SpaceMono-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0AB6640D2487DA0E00548CC8 /* Pomosh Watch */ = {
+			isa = PBXGroup;
+			children = (
+				0AB6644524883C7E00548CC8 /* Pomosh Watch.entitlements */,
+				0AB66442248837CD00548CC8 /* Pomosh WatchRelease.entitlements */,
+				0AB6640E2487DA0E00548CC8 /* Interface.storyboard */,
+				0AB664112487DA1200548CC8 /* Assets.xcassets */,
+				0AB664132487DA1200548CC8 /* Info.plist */,
+			);
+			path = "Pomosh Watch";
+			sourceTree = "<group>";
+		};
+		0AB6641C2487DA1200548CC8 /* Pomosh Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				0AB6644424883C5F00548CC8 /* Pomosh Watch Extension.entitlements */,
+				0AB664412488376400548CC8 /* Pomosh Watch ExtensionRelease.entitlements */,
+				0AB6641D2487DA1200548CC8 /* ContentView.swift */,
+				0AB6641F2487DA1200548CC8 /* HostingController.swift */,
+				0AB664212487DA1200548CC8 /* ExtensionDelegate.swift */,
+				0AB664232487DA1200548CC8 /* NotificationController.swift */,
+				0AB664252487DA1200548CC8 /* NotificationView.swift */,
+				0AB664272487DA1200548CC8 /* ComplicationController.swift */,
+				0AB664292487DA1300548CC8 /* Assets.xcassets */,
+				0AB6642E2487DA1300548CC8 /* Info.plist */,
+				0AB6642F2487DA1300548CC8 /* PushNotificationPayload.apns */,
+				0AB6642B2487DA1300548CC8 /* Preview Content */,
+				0AB6643D24881AF300548CC8 /* Timer.swift */,
+				0AB6643F24881B0F00548CC8 /* Utils.swift */,
+				0AB664472489167B00548CC8 /* PagerView.swift */,
+			);
+			path = "Pomosh Watch Extension";
+			sourceTree = "<group>";
+		};
+		0AB6642B2487DA1300548CC8 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0AB6642C2487DA1300548CC8 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0AB6644D248950E000548CC8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0AB6644E248950E100548CC8 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -88,15 +308,55 @@
 				0A4D951D2486BD1B001C4293 /* Sources */,
 				0A4D951E2486BD1B001C4293 /* Frameworks */,
 				0A4D951F2486BD1B001C4293 /* Resources */,
+				0A4D95482486C733001C4293 /* CopyFiles */,
+				0AB664332487DA1300548CC8 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0A157C702494F57900903915 /* PBXTargetDependency */,
+			);
+			name = Pomosh;
+			packageProductDependencies = (
+			);
+			productName = Pomosh;
+			productReference = 0A4D95212486BD1B001C4293 /* Pomosh.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0AB6640B2487DA0E00548CC8 /* Pomosh Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AB6643A2487DA1300548CC8 /* Build configuration list for PBXNativeTarget "Pomosh Watch" */;
+			buildPhases = (
+				0AB6640A2487DA0E00548CC8 /* Resources */,
+				0A157C6C2494F14900903915 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0A157C6B2494F14900903915 /* PBXTargetDependency */,
+			);
+			name = "Pomosh Watch";
+			productName = "Pomosh Watch";
+			productReference = 0AB6640C2487DA0E00548CC8 /* Pomosh Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		0AB664172487DA1200548CC8 /* Pomosh Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0AB664392487DA1300548CC8 /* Build configuration list for PBXNativeTarget "Pomosh Watch Extension" */;
+			buildPhases = (
+				0AB664142487DA1200548CC8 /* Sources */,
+				0AB664152487DA1200548CC8 /* Frameworks */,
+				0AB664162487DA1200548CC8 /* Resources */,
+				0A157C682494F0A900903915 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Pomosh;
-			productName = Pomosh;
-			productReference = 0A4D95212486BD1B001C4293 /* Pomosh.app */;
-			productType = "com.apple.product-type.application";
+			name = "Pomosh Watch Extension";
+			productName = "Pomosh Watch Extension";
+			productReference = 0AB664182487DA1200548CC8 /* Pomosh Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -111,6 +371,12 @@
 					0A4D95202486BD1B001C4293 = {
 						CreatedOnToolsVersion = 11.4.1;
 					};
+					0AB6640B2487DA0E00548CC8 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+					0AB664172487DA1200548CC8 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
 				};
 			};
 			buildConfigurationList = 0A4D951C2486BD1B001C4293 /* Build configuration list for PBXProject "Pomosh" */;
@@ -122,11 +388,15 @@
 				Base,
 			);
 			mainGroup = 0A4D95182486BD1B001C4293;
+			packageReferences = (
+			);
 			productRefGroup = 0A4D95222486BD1B001C4293 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				0A4D95202486BD1B001C4293 /* Pomosh */,
+				0AB6640B2487DA0E00548CC8 /* Pomosh Watch */,
+				0AB664172487DA1200548CC8 /* Pomosh Watch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -136,9 +406,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AB6645A248969D300548CC8 /* Silka Bold.otf in Resources */,
+				0AB664552489548A00548CC8 /* hit.wav in Resources */,
+				0AB664512489524800548CC8 /* toggle.wav in Resources */,
+				0AB66453248953A000548CC8 /* end.wav in Resources */,
+				0AB6644A2489479B00548CC8 /* session.wav in Resources */,
 				0A4D95342486BD1F001C4293 /* LaunchScreen.storyboard in Resources */,
+				0A4D95472486C6D3001C4293 /* SpaceMono-Regular.ttf in Resources */,
+				0AB6645C248969DD00548CC8 /* Silka Regular.otf in Resources */,
 				0A4D95312486BD1F001C4293 /* Preview Assets.xcassets in Resources */,
 				0A4D952E2486BD1F001C4293 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AB6640A2487DA0E00548CC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AB664122487DA1200548CC8 /* Assets.xcassets in Resources */,
+				0AB664102487DA0E00548CC8 /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0AB664162487DA1200548CC8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AB6642D2487DA1300548CC8 /* Preview Assets.xcassets in Resources */,
+				0AB6642A2487DA1300548CC8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,11 +447,46 @@
 				0A4D952A2486BD1B001C4293 /* Pomosh.xcdatamodeld in Sources */,
 				0A4D95252486BD1B001C4293 /* AppDelegate.swift in Sources */,
 				0A4D952C2486BD1B001C4293 /* ContentView.swift in Sources */,
+				0A4D95402486BEAE001C4293 /* Utils.swift in Sources */,
+				0A4D95422486C0B8001C4293 /* PagerView.swift in Sources */,
+				0A4D954B2486CA2B001C4293 /* SettingsView.swift in Sources */,
+				0A4D953E2486BE8A001C4293 /* TimerRing.swift in Sources */,
+				0A4D953C2486BE6D001C4293 /* Timer.swift in Sources */,
+				0A4D95442486C2E2001C4293 /* Button.swift in Sources */,
 				0A4D95272486BD1B001C4293 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0AB664142487DA1200548CC8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AB664202487DA1200548CC8 /* HostingController.swift in Sources */,
+				0AB6644024881B0F00548CC8 /* Utils.swift in Sources */,
+				0AB6641E2487DA1200548CC8 /* ContentView.swift in Sources */,
+				0AB664242487DA1200548CC8 /* NotificationController.swift in Sources */,
+				0AB664222487DA1200548CC8 /* ExtensionDelegate.swift in Sources */,
+				0AB664262487DA1200548CC8 /* NotificationView.swift in Sources */,
+				0AB664282487DA1200548CC8 /* ComplicationController.swift in Sources */,
+				0AB664482489167B00548CC8 /* PagerView.swift in Sources */,
+				0AB6643E24881AF300548CC8 /* Timer.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0A157C6B2494F14900903915 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0AB664172487DA1200548CC8 /* Pomosh Watch Extension */;
+			targetProxy = 0A157C6A2494F14900903915 /* PBXContainerItemProxy */;
+		};
+		0A157C702494F57900903915 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0AB6640B2487DA0E00548CC8 /* Pomosh Watch */;
+			targetProxy = 0A157C6F2494F57900903915 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		0A4D95322486BD1F001C4293 /* LaunchScreen.storyboard */ = {
@@ -165,6 +495,14 @@
 				0A4D95332486BD1F001C4293 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		0AB6640E2487DA0E00548CC8 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0AB6640F2487DA0E00548CC8 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -288,7 +626,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pomosh/PomoshDebug.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Pomosh/Preview Content\"";
 				DEVELOPMENT_TEAM = 9937MYTBBA;
 				ENABLE_PREVIEWS = YES;
@@ -297,7 +637,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.tabbycat.Pomosh;
+				PRODUCT_BUNDLE_IDENTIFIER = org.tabbycat.PomoshProductiviyTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -308,7 +648,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Pomosh/PomoshRelease.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Pomosh/Preview Content\"";
 				DEVELOPMENT_TEAM = 9937MYTBBA;
 				ENABLE_PREVIEWS = YES;
@@ -317,10 +659,106 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.tabbycat.Pomosh;
+				PRODUCT_BUNDLE_IDENTIFIER = org.tabbycat.PomoshProductiviyTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0AB664342487DA1300548CC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Pomosh Watch/Pomosh Watch.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = 9937MYTBBA;
+				IBSC_MODULE = Pomosh_Watch_Extension;
+				INFOPLIST_FILE = "Pomosh Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = org.tabbycat.PomoshProductiviyTimer.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		0AB664352487DA1300548CC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Pomosh Watch/Pomosh WatchRelease.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = 9937MYTBBA;
+				IBSC_MODULE = Pomosh_Watch_Extension;
+				INFOPLIST_FILE = "Pomosh Watch/Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = org.tabbycat.PomoshProductiviyTimer.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Release;
+		};
+		0AB664372487DA1300548CC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Pomosh Watch Extension/Pomosh Watch Extension.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_ASSET_PATHS = "\"Pomosh Watch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 9937MYTBBA;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Pomosh Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.tabbycat.PomoshProductiviyTimer.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
+			};
+			name = Debug;
+		};
+		0AB664382487DA1300548CC8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CODE_SIGN_ENTITLEMENTS = "Pomosh Watch Extension/Pomosh Watch ExtensionRelease.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_ASSET_PATHS = "\"Pomosh Watch Extension/Preview Content\"";
+				DEVELOPMENT_TEAM = 9937MYTBBA;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Pomosh Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = org.tabbycat.PomoshProductiviyTimer.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 6.2;
 			};
 			name = Release;
 		};
@@ -341,6 +779,24 @@
 			buildConfigurations = (
 				0A4D95392486BD1F001C4293 /* Debug */,
 				0A4D953A2486BD1F001C4293 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0AB664392487DA1300548CC8 /* Build configuration list for PBXNativeTarget "Pomosh Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AB664372487DA1300548CC8 /* Debug */,
+				0AB664382487DA1300548CC8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0AB6643A2487DA1300548CC8 /* Build configuration list for PBXNativeTarget "Pomosh Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0AB664342487DA1300548CC8 /* Debug */,
+				0AB664352487DA1300548CC8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
