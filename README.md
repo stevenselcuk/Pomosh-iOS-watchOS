@@ -12,9 +12,7 @@
       height="420"
       alt="Pomosh"
       title="Pomosh | Pomodoro technique asistant for iOS and WatchOS"
-    />
-	
-	    <img
+    /><img
       src="https://imgur.com/cI77YU1.png"
       height="420"
       alt="Pomosh"
