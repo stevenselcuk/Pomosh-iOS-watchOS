@@ -56,7 +56,8 @@ A working block and a break count as a cycle. A Cycle with a 25-minute working &
 
 ## Download 🚀
 
-[![](https://imgur.com/3PAeaY9.png)](https://apps.apple.com/us/app/gifski/id1351639930?mt=12)
+
+[![](https://linkmaker.itunes.apple.com/en-us/badge-lrg.svg?releaseDate=2020-06-01&kind=iossoftware&bubble=ios_apps)](https://apps.apple.com/us/app/pomosh/id1515791898?mt=8)
 
 ## Roadmap 🗺
 
