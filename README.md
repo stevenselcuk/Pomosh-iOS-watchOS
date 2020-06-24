@@ -52,17 +52,11 @@ A working block and a break count as a cycle. A Cycle with a 25-minute working &
 
 ## Requirements 🤔
 
-`MacOS 10.15`
+`iOS 13` or  `watchOS 6` 
 
 ## Download 🚀
 
-<div align="center">
-<a href="https://apps.apple.com/us/app/pomosh/id1515791898?ls=1">
-<img src="https://imgur.com/3PAeaY9.png"   alt="Pomosh Download Button"
-      title="Download on App Store" />
-</a>
-</div>
-
+[![](https://imgur.com/3PAeaY9.png)](https://apps.apple.com/us/app/gifski/id1351639930?mt=12)
 
 ## Roadmap 🗺
 
