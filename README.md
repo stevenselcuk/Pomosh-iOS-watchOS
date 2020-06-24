@@ -44,8 +44,6 @@ A working block and a break count as a cycle. A Cycle with a 25-minute working &
 
 - Sound effects: A chime effect indicates time is up. You can turn off it off course.
 
-- Global hotkeys: You can easily pause/start the timer with Control + Cmd + P
-
 - Written with Swift & SwiftUI
 
 
