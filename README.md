@@ -7,12 +7,7 @@
 
 <p align="center">
 <a href="https://apps.apple.com/us/app/garlic-for-remote-jobs/id1509031122?ls=1" target="_blank">
-    <img
-      src="https://imgur.com/oOfVj2I.png"
-      height="420"
-      alt="Pomosh"
-      title="Pomosh | Pomodoro technique asistant for iOS and WatchOS"
-    /><img
+<img
       src="https://imgur.com/cI77YU1.png"
       height="420"
       alt="Pomosh"
@@ -69,12 +64,6 @@ A working block and a break count as a cycle. A Cycle with a 25-minute working &
 </a>
 </div>
 
-<br>
-
-... or you may want to download from Github
-
-[🍅v.1.0 App](https://github.com/stevenselcuk/Pomosh/releases/download/1.0/Pomosh.v1.0.zip) | [🍅v.1.0 Dmg](https://github.com/stevenselcuk/Pomosh/releases/download/1.0/Pomosh.v1.0.dmg)
-
 
 ## Roadmap 🗺
 
@@ -82,6 +71,11 @@ A working block and a break count as a cycle. A Cycle with a 25-minute working &
 - [x] Launch on Producthunt 
 - [x] Pomosh  for iOS
 - [x] Pomosh for Apple Watch
+- [ ] Full pomodoro technic support
+
+## Change Log
+
+v.1.0 : Initial release
 
 ## Notes and Credits 🍍
 
