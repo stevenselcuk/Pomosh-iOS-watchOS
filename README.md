@@ -9,7 +9,6 @@
 <a href="https://apps.apple.com/us/app/pomosh/id1515791898" target="_blank">
 <img
       src="https://i.imgur.com/S60a8F3.gif"
-      height="420"
       alt="Pomosh"
       title="Pomosh | Pomodoro technique asistant for iOS and WatchOS"
     /></a>
