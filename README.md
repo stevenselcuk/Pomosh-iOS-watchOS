@@ -64,11 +64,19 @@ A working block and a break count as a cycle. A Cycle with a 25-minute working &
 - [x] Launch on Producthunt 
 - [x] Pomosh  for iOS
 - [x] Pomosh for Apple Watch
-- [ ] Full pomodoro technic support
+- [X] Full pomodoro technic support
 
 ## Change Log
 
 v.1.0 : Initial release
+
+v.2.0 : Pomodoro improvoments
+
+- Half-background mode without creating background task or time
+- Skip the round
+- Settings view UI changes & added some links
+- Haptic feedbacks
+- Some icon changes
 
 ## Notes and Credits 🍍
 
