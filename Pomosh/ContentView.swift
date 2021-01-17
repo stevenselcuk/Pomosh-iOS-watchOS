@@ -12,19 +12,20 @@ import UserNotifications
 let settings = UserDefaults.standard
 
 struct ContentView: View {
-    
     // MARK: - Properties
+
     @State var showingSettings = false
+
     @ObservedObject var ThePomoshTimer = PomoshTimer()
     var isIpad = UIDevice.current.model.hasPrefix("iPad")
-    // @State private var startUp = LaunchAtLogin.isEnabled
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     let notificationCenter = UNUserNotificationCenter.current()
-    
+    let generator = UIImpactFeedbackGenerator(style: .heavy)
+
     // MARK: - InDaClub
     init() {
-        if self.ThePomoshTimer.showNotifications {
-            notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+        if ThePomoshTimer.showNotifications {
+            notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { granted, _ in
                 if granted {
                     settings.set(true, forKey: "didNotificationsAllowed")
                 } else {
@@ -32,19 +33,45 @@ struct ContentView: View {
                 }
             }
         }
+        // Reset notification badge when app opened
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        // No sleep 🐑
+        UIApplication.shared.isIdleTimerDisabled = true
     }
+
     // MARK: - Main Component
+
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
-                TimerRing(color1: #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1), color2: #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1), width: isIpad ? 600 : 300, height: isIpad ? 600 : 300, percent: CGFloat(((Float(ThePomoshTimer.fulltime) - Float(ThePomoshTimer.timeRemaining))/Float(ThePomoshTimer.fulltime)) * 100), Timer: ThePomoshTimer)
+                TimerRing(color1: #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1), color2: #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1), width: isIpad ? 600 : 300, height: isIpad ? 600 : 300, percent: CGFloat(((Float(ThePomoshTimer.fulltime) - Float(ThePomoshTimer.timeRemaining)) / Float(ThePomoshTimer.fulltime)) * 100), Timer: ThePomoshTimer)
                     .padding()
                     .scaledToFit()
                     .frame(maxWidth: 1200, maxHeight: 1200, alignment: .center)
             }
             .navigationBarItems(
+                leading: Button(action: {
+                    generator.impactOccurred()
+                    self.ThePomoshTimer.isActive = false
+                    self.ThePomoshTimer.round -= 1
+                    self.ThePomoshTimer.fulltime = UserDefaults.standard.optionalInt(forKey: "time") ?? 1200
+                    self.ThePomoshTimer.timeRemaining = UserDefaults.standard.optionalInt(forKey: "time") ?? 1200
+                    if self.ThePomoshTimer.playSound {
+                        self.ThePomoshTimer.endSound()
+                    }
+                }) {
+                    HStack {
+                        Image("Skip")
+                            .antialiased(false)
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(maxWidth: 28, maxHeight: 28, alignment: .center)
+                    }
+                }
+                .buttonStyle(PomoshButtonStyle()),
                 trailing:
                 Button(action: {
+                    generator.impactOccurred()
                     self.showingSettings.toggle()
                 }) {
                     HStack {
@@ -54,197 +81,122 @@ struct ContentView: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(maxWidth: 28, maxHeight: 28, alignment: .center)
                     }
-                    
                 }
                 .buttonStyle(PomoshButtonStyle())
             )
-                .sheet(isPresented: $showingSettings) {
-                    VStack(alignment: .leading, spacing: 15.0) {
-                        Spacer()
-                        Text("Preferences")
-                            .foregroundColor(Color("Text"))
-                            .font(.custom("Silka Bold", size: 22))
-                        
-                        Divider()
-                            .padding(.bottom, 10.0)
-                        
-                        VStack(alignment: .leading, spacing: 30.0) {
-                            
-                            VStack(alignment: .leading)  {
-                                
-                                Text("Working Time:  \(self.ThePomoshTimer.fulltime / 60) minute")
-                                    .foregroundColor(Color("Text"))
-                                    .font(.custom("Silka Regular", size: 14))
-                                
-                                
-                                Slider(value: Binding(
-                                    get: {
-                                        Double(UserDefaults.standard.integer(forKey: "time"))
-                                },
-                                    set: {(newValue) in
-                                        settings.set(newValue, forKey: "time")
-                                        self.ThePomoshTimer.fulltime = Int(newValue)
-                                }
-                                ),in: 1200...3600, step: 300)
-                            }
-                            
-                            
-                            VStack(alignment: .leading)  {
-                                Text("Break Time:  \(self.ThePomoshTimer.fullBreakTime / 60) minute")
-                                    .foregroundColor(Color("Text"))
-                                    .font(.custom("Silka Regular", size: 14))
-                                
-                                
-                                Slider(value: Binding(
-                                    get: {
-                                        Double(self.ThePomoshTimer.fullBreakTime)
-                                },
-                                    set: {(newValue) in
-                                        settings.set(newValue, forKey: "fullBreakTime")
-                                        self.ThePomoshTimer.fullBreakTime = Int(newValue)
-                                }
-                                ) ,in: 300...600, step: 60)
-                            }
-                            
-                            
-                            VStack(alignment: .leading)  {
-                                Text("Total cycles in a session")
-                                    .foregroundColor(Color("Text"))
-                                    .font(.custom("Silka Regular", size: 14))
-                                    .padding(.bottom, 10.0)
-                                HStack {
-                                    
-                                    ForEach(0..<self.ThePomoshTimer.fullround, id: \.self) { index in
-                                        
-                                        Text("🔥")
-                                        
-                                    }
-                                }
-                                Slider(value: Binding(
-                                    get: {
-                                        Double(self.ThePomoshTimer.fullround)
-                                        
-                                },
-                                    set: {(newValue) in
-                                        
-                                        settings.set(newValue, forKey: "fullround")
-                                        self.ThePomoshTimer.fullround = Int(newValue)
-                                        
-                                }
-                                ),in: 1...12)
-                            }
-                            
-                            
-                            
-                            VStack {
-                                Toggle(isOn: self.$ThePomoshTimer.playSound) {
-                                    Text("Sound effects")
-                                        .foregroundColor(Color("Text"))
-                                        .font(.custom("Silka Regular", size: 14))
-                                }.padding(.vertical, 5.0)
-                                
-                                Toggle(isOn: self.$ThePomoshTimer.showNotifications) {
-                                    Text("Show Notifications")
-                                        .foregroundColor(Color("Text"))
-                                        .font(.custom("Silka Regular", size: 14))
-                                }
-                                .padding(.vertical, 5.0)
-                                
-                            }
-                            
-                            Spacer()
-                            
-                            
-                            
-                            
-                        }
-                    }.padding(.horizontal, 30.0)
-                    
-                    
+            .sheet(isPresented: $showingSettings) {
+                SettingsView()
             }
-                
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
             .background(Color("Background"))
             .edgesIgnoringSafeArea(.all)
+            // Catches soft close
             .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
-                self.ThePomoshTimer.isActive = false
-                
-                if(self.ThePomoshTimer.showNotifications) {
-                    //     self.scheduleAlarmNotification(sh: 30)
+                if self.ThePomoshTimer.isActive && self.ThePomoshTimer.showNotifications && self.ThePomoshTimer.timeRemaining > 0 {
+                    self.scheduleAlarmNotification(sh: TimeInterval(self.ThePomoshTimer.timeRemaining))
+                    settings.set(self.ThePomoshTimer.round, forKey: "lastKnownRound")
+                    settings.set(self.ThePomoshTimer.runnedRounds, forKey: "lastRunnedRound")
+                    settings.set(self.ThePomoshTimer.isBreakActive, forKey: "itWasBreak")
                 }
-                
-                
             }
-            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willEnterForegroundNotification)) { _ in
-                
-                self.ThePomoshTimer.isActive = true
+            // Catches total destruction
+            .onReceive(NotificationCenter.default.publisher(for: UIApplication.willTerminateNotification)) { _ in
+                if self.ThePomoshTimer.isActive && self.ThePomoshTimer.showNotifications && self.ThePomoshTimer.timeRemaining > 0 {
+                    self.scheduleAlarmNotification(sh: TimeInterval(self.ThePomoshTimer.timeRemaining))
+                    settings.set(self.ThePomoshTimer.runnedRounds, forKey: "lastKnownRound")
+                    settings.set(self.ThePomoshTimer.isBreakActive, forKey: "itWasBreak")
+                }
             }
-            .onReceive(timer) { time in
+            .onReceive(NotificationCenter.default.publisher(for: UIApplication.didBecomeActiveNotification)) { _ in
+                cancelNotifications()
+                if isCameFromNotification {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        generator.impactOccurred()
+                        withAnimation(.interpolatingSpring(mass: 1.0,
+                                                           stiffness: 100.0,
+                                                           damping: 10,
+                                                           initialVelocity: 0)) {
+                            self.ThePomoshTimer.isActive = true
+                            self.ThePomoshTimer.timeRemaining = 2
+                            self.ThePomoshTimer.round = UserDefaults.standard.integer(forKey: "lastKnownRound")
+                            self.ThePomoshTimer.runnedRounds = UserDefaults.standard.integer(forKey: "lastRunnedRound")
+                            if UserDefaults.standard.bool(forKey: "itWasBreak") {
+                                self.ThePomoshTimer.isBreakActive = true
+                            } else {
+                                self.ThePomoshTimer.isBreakActive = false
+                            }
+                        }
+                    }
+
+                    isCameFromNotification = false
+                }
+            }
+            .onReceive(timer) { _ in
                 guard self.ThePomoshTimer.isActive else { return }
-                
-                
+
                 if self.ThePomoshTimer.timeRemaining > 0 {
-                    
                     self.ThePomoshTimer.timeRemaining -= 1
                 }
-                
+
                 if self.ThePomoshTimer.timeRemaining == 1 && self.ThePomoshTimer.round > 0 {
-                    
                     if self.ThePomoshTimer.playSound {
                         self.ThePomoshTimer.endSound()
                     }
                     self.ThePomoshTimer.isBreakActive.toggle()
-                    
+
                     if self.ThePomoshTimer.isBreakActive == true {
                         if self.ThePomoshTimer.round == 1 {
                             self.ThePomoshTimer.timeRemaining = 0
                             self.ThePomoshTimer.isBreakActive = false
                         } else {
-                            self.ThePomoshTimer.timeRemaining = UserDefaults.standard.optionalInt(forKey: "fullBreakTime") ?? 600
-                            self.ThePomoshTimer.fulltime = UserDefaults.standard.optionalInt(forKey: "fullBreakTime") ?? 600
+                            if self.ThePomoshTimer.runnedRounds == self.ThePomoshTimer.longBreakRound - 1 {
+                                self.ThePomoshTimer.timeRemaining = UserDefaults.standard.optionalInt(forKey: "fullLongBreakTime") ?? 1200
+                                self.ThePomoshTimer.fulltime = UserDefaults.standard.optionalInt(forKey: "fullLongBreakTime") ?? 1200
+                            } else {
+                                self.ThePomoshTimer.timeRemaining = UserDefaults.standard.optionalInt(forKey: "fullBreakTime") ?? 600
+                                self.ThePomoshTimer.fulltime = UserDefaults.standard.optionalInt(forKey: "fullBreakTime") ?? 600
+                            }
                         }
-                        
+                        self.ThePomoshTimer.runnedRounds += 1
                         self.ThePomoshTimer.round -= 1
                     } else {
                         self.ThePomoshTimer.fulltime = UserDefaults.standard.optionalInt(forKey: "time") ?? 1200
                         self.ThePomoshTimer.timeRemaining = UserDefaults.standard.optionalInt(forKey: "time") ?? 1200
                     }
-                    
+                    generator.impactOccurred()
                 } else if self.ThePomoshTimer.timeRemaining == 0 {
                     self.ThePomoshTimer.isActive = false
                 }
-                
             }
-            
         }
         .navigationViewStyle(StackNavigationViewStyle())
-        
     }
-    
+
     // MARK: - Local Notifications
-    
+
     func scheduleAlarmNotification(sh: TimeInterval) {
         let content = UNMutableNotificationContent()
-        var bodyString: String  {
+        var bodyString: String {
             var string = ""
             if self.ThePomoshTimer.isBreakActive == true {
-                string = "Now, It's working time 🔥"
+                string = "Now, It's time to work 💪. Tap here too start the timer..."
             } else {
-                string = "It's break time ☕️"
+                string = "Awesome! It's break time ☕️. Tap here to start the timer..."
             }
             return string
         }
-        content.title = "Time is up 🙌"
+        content.title = "🍅 Pomosh has done!"
         content.body = bodyString
         content.badge = 1
-        
+        content.sound = .default
+
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: sh, repeats: false)
         let identifier = "localNotification"
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-        
-        notificationCenter.getNotificationSettings { (settings) in
+
+        notificationCenter.getNotificationSettings { settings in
             if settings.authorizationStatus == .authorized {
-                self.notificationCenter.add(request) { (error) in
+                self.notificationCenter.add(request) { error in
                     if let error = error {
                         print("Error: \(error.localizedDescription)")
                     }
@@ -252,7 +204,8 @@ struct ContentView: View {
             }
         }
     }
-    
+
+    func cancelNotifications() {
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+    }
 }
-
-

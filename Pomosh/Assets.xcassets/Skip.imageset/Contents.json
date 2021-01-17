@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "cogwheel-1.png",
+      "filename" : "fast-forward-1.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -12,7 +12,7 @@
           "value" : "light"
         }
       ],
-      "filename" : "cogwheel.png",
+      "filename" : "fast-forward.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -23,12 +23,12 @@
           "value" : "dark"
         }
       ],
-      "filename" : "cogwheel (3).png",
+      "filename" : "fast-forward (3).png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "cogwheel (1)-1.png",
+      "filename" : "fast-forward (1)-1.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -39,7 +39,7 @@
           "value" : "light"
         }
       ],
-      "filename" : "cogwheel (1).png",
+      "filename" : "fast-forward (1).png",
       "idiom" : "universal",
       "scale" : "2x"
     },
@@ -50,12 +50,12 @@
           "value" : "dark"
         }
       ],
-      "filename" : "cogwheel (4).png",
+      "filename" : "fast-forward (4).png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "cogwheel (2)-1.png",
+      "filename" : "fast-forward (2)-1.png",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -66,7 +66,7 @@
           "value" : "light"
         }
       ],
-      "filename" : "cogwheel (2).png",
+      "filename" : "fast-forward (2).png",
       "idiom" : "universal",
       "scale" : "3x"
     },
@@ -77,7 +77,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "cogwheel (5).png",
+      "filename" : "fast-forward (5).png",
       "idiom" : "universal",
       "scale" : "3x"
     }
