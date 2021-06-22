@@ -53,7 +53,9 @@ struct ContentView: View {
                 leading: Button(action: {
                     generator.impactOccurred()
                     self.ThePomoshTimer.isActive = false
-                    self.ThePomoshTimer.round -= 1
+                    if self.ThePomoshTimer.round != 0 {
+                        self.ThePomoshTimer.round -= 1
+                    }
                     self.ThePomoshTimer.fulltime = UserDefaults.standard.optionalInt(forKey: "time") ?? 1200
                     self.ThePomoshTimer.timeRemaining = UserDefaults.standard.optionalInt(forKey: "time") ?? 1200
                     if self.ThePomoshTimer.playSound {
