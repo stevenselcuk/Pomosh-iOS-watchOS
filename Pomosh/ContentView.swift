@@ -23,6 +23,7 @@ struct ContentView: View {
     let generator = UIImpactFeedbackGenerator(style: .heavy)
 
     // MARK: - InDaClub
+
     init() {
         if ThePomoshTimer.showNotifications {
             notificationCenter.requestAuthorization(options: [.alert, .badge, .sound]) { granted, _ in
@@ -44,7 +45,7 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
-                TimerRing(color1: #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1), color2: #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1), width: isIpad ? 600 : 300, height: isIpad ? 600 : 300, percent: CGFloat(((Float(ThePomoshTimer.fulltime) - Float(ThePomoshTimer.timeRemaining)) / Float(ThePomoshTimer.fulltime)) * 100), Timer: ThePomoshTimer)
+                TimerRing(color1: #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1), color2: #colorLiteral(red: 0.3647058904, green: 0.06666667014, blue: 0.9686274529, alpha: 1), width: isIpad ? 600 : 300, height: isIpad ? 600 : 300, percent: CGFloat(((Float(ThePomoshTimer.isBreakActive ? ThePomoshTimer.breakTime : ThePomoshTimer.fulltime) - Float(ThePomoshTimer.timeRemaining)) / Float(ThePomoshTimer.isBreakActive ? ThePomoshTimer.breakTime : ThePomoshTimer.fulltime)) * 100), Timer: ThePomoshTimer)
                     .padding()
                     .scaledToFit()
                     .frame(maxWidth: 1200, maxHeight: 1200, alignment: .center)
@@ -53,7 +54,9 @@ struct ContentView: View {
                 leading: Button(action: {
                     generator.impactOccurred()
                     self.ThePomoshTimer.isActive = false
-                    self.ThePomoshTimer.round -= 1
+                    if self.ThePomoshTimer.round != 0 {
+                        self.ThePomoshTimer.round -= 1
+                    }
                     self.ThePomoshTimer.fulltime = UserDefaults.standard.optionalInt(forKey: "time") ?? 1200
                     self.ThePomoshTimer.timeRemaining = UserDefaults.standard.optionalInt(forKey: "time") ?? 1200
                     if self.ThePomoshTimer.playSound {
@@ -85,14 +88,14 @@ struct ContentView: View {
                 .buttonStyle(PomoshButtonStyle())
             )
             .sheet(isPresented: $showingSettings) {
-                SettingsView()
+                SettingsView(timer: ThePomoshTimer)
             }
             .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
             .background(Color("Background"))
             .edgesIgnoringSafeArea(.all)
             // Catches soft close
             .onReceive(NotificationCenter.default.publisher(for: UIApplication.willResignActiveNotification)) { _ in
-                if self.ThePomoshTimer.isActive && self.ThePomoshTimer.showNotifications && self.ThePomoshTimer.timeRemaining > 0 {
+                if self.ThePomoshTimer.isActive, self.ThePomoshTimer.showNotifications, self.ThePomoshTimer.timeRemaining > 0 {
                     self.scheduleAlarmNotification(sh: TimeInterval(self.ThePomoshTimer.timeRemaining))
                     settings.set(self.ThePomoshTimer.round, forKey: "lastKnownRound")
                     settings.set(self.ThePomoshTimer.runnedRounds, forKey: "lastRunnedRound")
@@ -101,7 +104,7 @@ struct ContentView: View {
             }
             // Catches total destruction
             .onReceive(NotificationCenter.default.publisher(for: UIApplication.willTerminateNotification)) { _ in
-                if self.ThePomoshTimer.isActive && self.ThePomoshTimer.showNotifications && self.ThePomoshTimer.timeRemaining > 0 {
+                if self.ThePomoshTimer.isActive, self.ThePomoshTimer.showNotifications, self.ThePomoshTimer.timeRemaining > 0 {
                     self.scheduleAlarmNotification(sh: TimeInterval(self.ThePomoshTimer.timeRemaining))
                     settings.set(self.ThePomoshTimer.runnedRounds, forKey: "lastKnownRound")
                     settings.set(self.ThePomoshTimer.isBreakActive, forKey: "itWasBreak")
@@ -138,7 +141,7 @@ struct ContentView: View {
                     self.ThePomoshTimer.timeRemaining -= 1
                 }
 
-                if self.ThePomoshTimer.timeRemaining == 1 && self.ThePomoshTimer.round > 0 {
+                if self.ThePomoshTimer.timeRemaining == 1, self.ThePomoshTimer.round > 0 {
                     if self.ThePomoshTimer.playSound {
                         self.ThePomoshTimer.endSound()
                     }
@@ -151,16 +154,15 @@ struct ContentView: View {
                         } else {
                             if self.ThePomoshTimer.runnedRounds == self.ThePomoshTimer.longBreakRound - 1 {
                                 self.ThePomoshTimer.timeRemaining = UserDefaults.standard.optionalInt(forKey: "fullLongBreakTime") ?? 1200
-                                self.ThePomoshTimer.fulltime = UserDefaults.standard.optionalInt(forKey: "fullLongBreakTime") ?? 1200
+                                self.ThePomoshTimer.breakTime = UserDefaults.standard.optionalInt(forKey: "fullLongBreakTime") ?? 1200
                             } else {
                                 self.ThePomoshTimer.timeRemaining = UserDefaults.standard.optionalInt(forKey: "fullBreakTime") ?? 600
-                                self.ThePomoshTimer.fulltime = UserDefaults.standard.optionalInt(forKey: "fullBreakTime") ?? 600
+                                self.ThePomoshTimer.breakTime = UserDefaults.standard.optionalInt(forKey: "fullBreakTime") ?? 600
                             }
                         }
                         self.ThePomoshTimer.runnedRounds += 1
                         self.ThePomoshTimer.round -= 1
                     } else {
-                        self.ThePomoshTimer.fulltime = UserDefaults.standard.optionalInt(forKey: "time") ?? 1200
                         self.ThePomoshTimer.timeRemaining = UserDefaults.standard.optionalInt(forKey: "time") ?? 1200
                     }
                     generator.impactOccurred()
