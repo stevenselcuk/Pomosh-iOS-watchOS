@@ -51,13 +51,15 @@ struct SettingsView: View {
 
                                 },
                                 set: { newValue in
-                                    withAnimation(.interpolatingSpring(mass: 1.0,
-                                                                       stiffness: 100.0,
-                                                                       damping: 10,
-                                                                       initialVelocity: 0)) {
+                                    if Int(newValue) != self.ThePomoshTimer.fullround {
                                         generator.impactOccurred()
-                                        settings.set(newValue, forKey: "fullround")
-                                        self.ThePomoshTimer.fullround = Int(newValue)
+                                        withAnimation(.interpolatingSpring(mass: 1.0,
+                                                                           stiffness: 100.0,
+                                                                           damping: 10,
+                                                                           initialVelocity: 0)) {
+                                            settings.set(newValue, forKey: "fullround")
+                                            self.ThePomoshTimer.fullround = Int(newValue)
+                                        }
                                     }
                                 }
                             ), in: 1 ... 12)
