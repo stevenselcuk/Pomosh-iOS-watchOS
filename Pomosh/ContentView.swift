@@ -153,16 +153,13 @@ struct ContentView: View {
                         } else {
                             if self.ThePomoshTimer.runnedRounds == self.ThePomoshTimer.longBreakRound - 1 {
                                 self.ThePomoshTimer.timeRemaining = UserDefaults.standard.optionalInt(forKey: "fullLongBreakTime") ?? 1200
-                                self.ThePomoshTimer.fulltime = UserDefaults.standard.optionalInt(forKey: "fullLongBreakTime") ?? 1200
                             } else {
                                 self.ThePomoshTimer.timeRemaining = UserDefaults.standard.optionalInt(forKey: "fullBreakTime") ?? 600
-                                self.ThePomoshTimer.fulltime = UserDefaults.standard.optionalInt(forKey: "fullBreakTime") ?? 600
                             }
                         }
                         self.ThePomoshTimer.runnedRounds += 1
                         self.ThePomoshTimer.round -= 1
                     } else {
-                        self.ThePomoshTimer.fulltime = UserDefaults.standard.optionalInt(forKey: "time") ?? 1200
                         self.ThePomoshTimer.timeRemaining = UserDefaults.standard.optionalInt(forKey: "time") ?? 1200
                     }
                     generator.impactOccurred()
