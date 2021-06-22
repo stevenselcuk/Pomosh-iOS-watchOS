@@ -9,8 +9,12 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @ObservedObject var ThePomoshTimer = PomoshTimer()
+    @ObservedObject var ThePomoshTimer: PomoshTimer
     let generator = UIImpactFeedbackGenerator(style: .heavy)
+
+    init(timer: PomoshTimer) {
+        ThePomoshTimer = timer
+    }
 
     var body: some View {
         NavigationView {
