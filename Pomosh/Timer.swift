@@ -78,6 +78,8 @@ class PomoshTimer: ObservableObject {
 
     public func sessionSound() {
         do {
+            try AVAudioSession.sharedInstance().setCategory(.ambient)
+            try AVAudioSession.sharedInstance().setActive(true)
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "session", ofType: "wav")!))
             audioPlayer.play()
         } catch {
@@ -86,6 +88,8 @@ class PomoshTimer: ObservableObject {
 
     public func toggleSound() {
         do {
+            try AVAudioSession.sharedInstance().setCategory(.ambient)
+            try AVAudioSession.sharedInstance().setActive(true)
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "toggle", ofType: "wav")!))
             audioPlayer.play()
         } catch {
@@ -94,6 +98,8 @@ class PomoshTimer: ObservableObject {
 
     public func endSound() {
         do {
+            try AVAudioSession.sharedInstance().setCategory(.ambient)
+            try AVAudioSession.sharedInstance().setActive(true)
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "end", ofType: "wav")!))
             audioPlayer.play()
         } catch {
@@ -102,6 +108,8 @@ class PomoshTimer: ObservableObject {
 
     public func hitSound() {
         do {
+            try AVAudioSession.sharedInstance().setCategory(.ambient)
+            try AVAudioSession.sharedInstance().setActive(true)
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "hit", ofType: "wav")!))
             audioPlayer.play()
         } catch {
